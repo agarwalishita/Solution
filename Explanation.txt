@@ -1,0 +1,31 @@
+ 
+ 442. Find All Duplicates in an Array
+
+ Given an array of integers, 1 ≤ a[i] ≤ n (n = size of array), some elements appear twice and others appear once.
+ Find all the elements that appear twice in this array.
+ Could you do it without extra space and in O(n) runtime?
+ Example:
+ Input:
+ [4,3,2,7,8,2,3,1]
+ Output:
+ [2,3]
+
+
+Approach : 
+
+Swap elements to their correct places leaving only duplicates at locations which are not same as their expected index. As we know that the numbers are equal to the size of array, only one offset of index. We can iterate on all numbers and keep on swapping them to their expected index, unless a number is already present in their expected index.
+
+So, we are solving this question in two steps:
+
+1) We put each element x in nums[x - 1]. Since x ranges from 1 to N, then x - 1 ranges from 0 to N - 1, it won't exceed the bound of the array.
+
+2) We check through the array. If a number x isn't present in nums[x - 1], then x is absent.
+
+Complexity:
+
+Time Complexity : O(N)
+Each swap operation puts a number to it's right place, so it's O(N) in time。
+
+Space Complexity : O(1)
+Constant Space usage.
+
